@@ -7,6 +7,7 @@ import com.example.springsocial.model.PostsType;
 public class PostsInput {
 
 	String data;
+	String textData;
 	String title;
 	String hashedId;
 	String editor_content;
@@ -14,6 +15,8 @@ public class PostsInput {
 	PostsType type;
 	List<String> tags;
 	boolean published;
+	String postDate;
+
 
 	public List<String> getTags() {
 		return tags;
@@ -29,6 +32,22 @@ public class PostsInput {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getPostDate() {
+		return postDate;
+	}
+
+	public void setPostDate(String postDate) {
+		this.postDate = postDate;
+	}
+
+	public String getTextData() {
+		return textData;
+	}
+
+	public void setTextData(String textData) {
+		this.textData = textData;
 	}
 
 	public String getTitle() {

@@ -6,8 +6,8 @@ import java.util.Date;
 
 public class CommonUtils {
 
-	public static String getCurrDateString(){
-	       Date todaysDate = new Date();
+	public static String getCurrDateString(Date todaysDate){
+	       
 
 	       DateFormat df3 = new SimpleDateFormat("dd-MMM-yyyy");
 

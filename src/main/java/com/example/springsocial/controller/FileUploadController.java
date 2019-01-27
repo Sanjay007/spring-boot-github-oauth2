@@ -48,7 +48,7 @@ public class FileUploadController {
 	@Autowired
 	PostsSaveService postsSaveService;
 	
-	String UPLOAD_DIR = "/app";
+	String UPLOAD_DIR = "D://upload/";
 	String out ="";
     @CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)

@@ -5,7 +5,6 @@ import java.sql.Types;
 import org.hibernate.dialect.PostgreSQL9Dialect;
 import org.hibernate.type.descriptor.sql.ClobTypeDescriptor;
 import org.hibernate.type.descriptor.sql.SqlTypeDescriptor;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 @Component

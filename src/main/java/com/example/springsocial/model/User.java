@@ -1,6 +1,8 @@
 package com.example.springsocial.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -35,6 +37,10 @@ public class User {
 
     private String providerId;
 
+    
+    @OneToMany(mappedBy="user")
+    private Set<Posts> posts;
+    
     public Long getId() {
         return id;
     }
@@ -98,4 +104,13 @@ public class User {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
+	public Set<Posts> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Set<Posts> posts) {
+		this.posts = posts;
+	}
+    
 }
