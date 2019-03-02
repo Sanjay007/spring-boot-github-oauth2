@@ -51,7 +51,16 @@ public class Posts {
 	@OneToMany(mappedBy="post")
     private Set<Tags> tags;
 	
+	private String seoTitle;
 	
+	public String getSeoTitle() {
+		return seoTitle;
+	}
+
+	public void setSeoTitle(String seoTitle) {
+		this.seoTitle = seoTitle;
+	}
+
 	public User getUser() {
 		return user;
 	}

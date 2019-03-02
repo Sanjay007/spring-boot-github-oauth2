@@ -64,15 +64,16 @@ public class FileUploadController {
 		file.transferTo(targetFile);
 		String UploadedDirectory = targetFile.getAbsolutePath();
 		FileData dt = new FileData();
-		dt.setLink("http://localhost:9000/upload/" + filename);
+		dt.setLink("http://localhost:9000/upload/" + filename+fileExtension);
 		return new ApiResponse(dt);
 	}
 
     @CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/upload/{galleryId}", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> getFile(@PathVariable("galleryId") String galleryId) throws IOException {
+String[] splitted=galleryId.split(".");
 
-		byte[] bFile = Files.readAllBytes(new File(UPLOAD_DIR + galleryId + ".jpg").toPath());
+		byte[] bFile = Files.readAllBytes(new File(UPLOAD_DIR + galleryId + "."+splitted[1]!=null?splitted[1]:"jpg").toPath());
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.IMAGE_JPEG);
